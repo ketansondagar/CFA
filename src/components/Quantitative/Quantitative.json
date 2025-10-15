@@ -1,0 +1,68 @@
+{
+  "modales": [
+    {
+      "id": "1",
+      "title": "Learning Module:",
+      "description": "Introduction to Quantitative Methods",
+      "image": "/images/4.jpg",
+      "enabled": true,
+      "createdAt": "2025-10-15T07:20:30.974Z",
+      "updatedAt": "2025-10-15T07:24:37.088Z"
+    },
+    {
+      "id": "2",
+      "title": "Learning Module:",
+      "description": "Time Value of Money",
+      "image": "/images/5.jpg",
+      "enabled": true,
+      "createdAt": "2025-10-15T07:20:30.974Z",
+      "updatedAt": "2025-10-15T07:24:37.088Z"
+    },
+    {
+      "id": "3",
+      "title": "Learning Module:",
+      "description": "Discounted Cash Flow Applications",
+      "image": "/images/6.jpg",
+      "enabled": true,
+      "createdAt": "2025-10-15T07:20:30.974Z",
+      "updatedAt": "2025-10-15T07:24:37.088Z"
+    },
+    {
+      "id": "4",
+      "title": "Learning Module:",
+      "description": "Statistical Concepts and Market Returns",
+      "image": "/images/7.jpg",
+      "enabled": true,
+      "createdAt": "2025-10-15T07:20:30.974Z",
+      "updatedAt": "2025-10-15T07:24:37.088Z"
+    },
+    {
+      "id": "5",
+      "title": "Learning Module:",
+      "description": "Hypothesis Testing",
+      "image": "/images/8.jpg",
+      "enabled": true,
+      "createdAt": "2025-10-15T07:20:30.974Z",
+      "updatedAt": "2025-10-15T07:24:37.088Z"
+    },
+    {
+      "id": "6",
+      "title": "Learning Module:",
+      "description": "Statistical Concepts and Market Returns",
+      "image": "/images/9.jpg",
+      "enabled": true,
+      "createdAt": "2025-10-15T07:20:30.974Z",
+      "updatedAt": "2025-10-15T07:24:37.088Z"
+    },
+    {
+      "id": "7",
+      "title": "Learning Module:",
+      "description": "Hypothesis Testing",
+      "image": "/images/10.jpg",
+      "enabled": true,
+      "createdAt": "2025-10-15T07:20:30.974Z",
+      "updatedAt": "2025-10-15T07:24:37.088Z"
+    }
+  ],
+  "lastUpdated": "2025-10-06T07:24:37.088Z"
+}
