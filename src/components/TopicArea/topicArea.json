@@ -14,7 +14,7 @@
       "title": "Ethics",
       "description": "",
       "image": "/images/1.jpg",
-      "enabled": true,
+      "enabled": false,
       "createdAt": "2025-10-15T07:20:30.974Z",
       "updatedAt": "2025-10-15T07:24:37.088Z"
     },
@@ -23,7 +23,7 @@
       "title": "Economics",
       "description": "",
       "image": "/images/3.jpg",
-      "enabled": true,
+      "enabled": false,
       "createdAt": "2025-10-15T07:20:30.974Z",
       "updatedAt": "2025-10-15T07:24:37.088Z"
     },
@@ -32,7 +32,7 @@
       "title": "Financial Statement Analysis (FSA)",
       "description": "",
       "image": "/images/4.jpg",
-      "enabled": true,
+      "enabled": false,
       "createdAt": "2025-10-15T07:20:30.974Z",
       "updatedAt": "2025-10-15T07:24:37.088Z"
     }

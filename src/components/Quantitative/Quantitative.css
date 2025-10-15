@@ -1,18 +1,17 @@
 /* Base layout */
 .quant-page {
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
   position: relative;
-  background: url("/public/images/5.jpg") no-repeat center center;
-  background-size: cover;
+  background: rgb(30, 67, 116);
+  font-family: "Inter", sans-serif;
   color: white;
-  padding-bottom: 80px;
-  /* space for fixed footer */
-  background: rgb(30 67 116)
 }
 
-/* Optional dark overlay */
+/* Optional dark overlay (if needed) */
+/*
 .quant-page::before {
   content: "";
   position: absolute;
@@ -20,52 +19,61 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgb(30 67 116);
-  /* darkens background image */
+  background: rgba(0, 0, 0, 0.4);
   z-index: 0;
 }
+*/
 
-.quant-page>* {
-  position: relative;
-  z-index: 1;
-}
-
-/* Header */
+/* Header (fixed) */
 .quant-header {
+  position: fixed;
+  top: 0;
   width: 100%;
-  padding: 10px;
+  height: 60px;
   background: white;
   color: black;
-  border-bottom: 1px solid #ddd;
   display: flex;
   align-items: center;
+  padding: 10px 16px;
+  border-bottom: 1px solid #ddd;
+  z-index: 10;
 }
 
-/* Description */
+/* Description (fixed below header) */
 .quant-description {
+  position: fixed;
+  top: 60px;
   width: 100%;
   background: rgba(255, 255, 255, 0.12);
   padding: 16px;
+  z-index: 9;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .quant-description p {
-      font-weight: 600;
-    font-size: 18px;
-    line-height: 28px;
-    vertical-align: middle;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 28px;
+  margin: 0;
+  vertical-align: middle;
 }
 
-
-/* Modules list */
+/* Modules list (scrollable) */
 .quant-modules {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 16px;
-  gap: 16px;
-  width: 99%;
+  flex: 1;
+  overflow-y: auto;
+  margin-top: 132px; /* header + description height */
+  margin-bottom: 60px; /* footer space */
   padding: 0 12px;
-  background: rgb(30 67 116);
+  background: rgb(30, 67, 116);
+}
+
+@media (max-width: 768px) {
+  .quant-modules {
+    padding: 0 8px;
+    margin-top: 195px;
+    margin-bottom: 70px;
+  }
 }
 
 /* Each module card */
@@ -73,13 +81,13 @@
   background-color: white;
   color: #1a202c;
   border-radius: 16px;
-  width: 100%;
+  width: 99%;
   overflow: hidden;
   display: flex;
   align-items: center;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-      margin-bottom: 15px;
+  margin-bottom: 15px;
 }
 
 .quant-card:hover {
@@ -88,37 +96,34 @@
 }
 
 .quant-card-img {
-      width: 76px;
-    height: 79px;
+  width: 76px;
+  height: 79px;
   object-fit: cover;
   border-radius: 16px 0 0 16px;
   padding: 10px;
 }
 
-p {
-  margin-top: 0;
-  margin-bottom: 0rem;
-}
-
+/* Card text */
 .quant-card-text {
   padding: 12px;
 }
 
 .quant-card-title {
-      font-weight: 800;
-    font-size: 14px;
-    line-height: 22px;
-    vertical-align: middle;
+  font-weight: 800;
+  font-size: 14px;
+  line-height: 22px;
+  vertical-align: middle;
+  margin-bottom: 4px;
 }
 
 .quant-card-subtitle {
- font-weight: 500;
-    font-size: 14px;
-    line-height: 22px;
-    vertical-align: middle;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 22px;
+  vertical-align: middle;
 }
 
-/* Footer pinned to bottom */
+/* Footer (fixed) */
 .topic-footer {
   position: fixed;
   bottom: 0;
@@ -130,6 +135,5 @@ p {
   text-align: center;
   padding: 10px;
   border-top: 1px solid #ccc;
-  z-index: 5;
+  z-index: 10;
 }
-
