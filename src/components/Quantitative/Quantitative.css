@@ -5,24 +5,11 @@
   flex-direction: column;
   overflow: hidden;
   position: relative;
-  background: rgb(30, 67, 116);
+  background: rgba(6, 0, 90, 1);
+  ;
   font-family: "Inter", sans-serif;
   color: white;
 }
-
-/* Optional dark overlay (if needed) */
-/*
-.quant-page::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.4);
-  z-index: 0;
-}
-*/
 
 /* Header (fixed) */
 .quant-header {
@@ -39,15 +26,28 @@
   z-index: 10;
 }
 
-/* Description (fixed below header) */
+/* Description (scrollable if content overflows) */
 .quant-description {
-  position: fixed;
+  position: relative;
   top: 60px;
   width: 100%;
-  background: rgba(255, 255, 255, 0.12);
+  max-height: 120px;
+  /* limit height for scroll */
+  overflow: auto;
+  /* enable scrolling if needed */
+  background: rgba(6, 0, 90, 1);
+
   padding: 16px;
   z-index: 9;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.quant-description::-webkit-scrollbar {
+  width: 6px;
+}
+
+.quant-description::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 3px;
 }
 
 .quant-description p {
@@ -58,20 +58,38 @@
   vertical-align: middle;
 }
 
-/* Modules list (scrollable) */
+/* Modules list (scrollable main content) */
 .quant-modules {
   flex: 1;
-  overflow-y: auto;
-  margin-top: 132px; /* header + description height */
-  margin-bottom: 60px; /* footer space */
+  /* changed from overflow-y to full auto */
+  margin-top: 75px;
+  /* header + description */
+  margin-bottom: 60px;
+  /* footer space */
   padding: 0 12px;
-  background: rgb(30, 67, 116);
+  background: rgba(6, 0, 90, 1);
+  ;
+}
+
+.overflow {
+  overflow: auto;
+  /*height: calc(100vh - 192px);*/
+  /* Adjust height based on header, description, and footer */
+}
+
+.quant-modules::-webkit-scrollbar {
+  width: 8px;
+}
+
+.quant-modules::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
 }
 
 @media (max-width: 768px) {
   .quant-modules {
     padding: 0 8px;
-    margin-top: 195px;
+    margin-top: 80px;
     margin-bottom: 70px;
   }
 }
@@ -80,7 +98,6 @@
 .quant-card {
   background-color: white;
   color: #1a202c;
-  border-radius: 16px;
   width: 99%;
   overflow: hidden;
   display: flex;
@@ -110,7 +127,7 @@
 
 .quant-card-title {
   font-weight: 800;
-  font-size: 14px;
+  font-size: 18px;
   line-height: 22px;
   vertical-align: middle;
   margin-bottom: 4px;
@@ -118,7 +135,7 @@
 
 .quant-card-subtitle {
   font-weight: 500;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 22px;
   vertical-align: middle;
 }

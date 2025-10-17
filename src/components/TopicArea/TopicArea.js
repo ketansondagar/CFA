@@ -12,7 +12,7 @@ const topics = json.topics;
 export default function TopicCards() {
   return (
     <div className="topic-container">
-      
+
       {/* Fixed Header */}
       <div className="topic-heading">
         <h2>Choose a Topic Area</h2>
