@@ -1,0 +1,54 @@
+{
+  "questions": [
+    {
+      "id": "1",
+      "question": "Which of the following best defines the Time Value of Money?",
+      "options": [
+        { "id": "1", "option": "Money loses value over time due to inflation" },
+        { "id": "2", "option": "The idea that a dollar today is worth more than a dollar in the future" },
+        { "id": "3", "option": "Future cash flows must always be discounted using inflation rates" },
+        { "id": "4", "option": "Present values are calculated using accounting profit" }
+      ]
+    },
+    {
+      "id": "2",
+      "question": "Which of the following components is NOT required to calculate the present value of a single future cash flow?",
+      "options": [
+        { "id": "1", "option": "Discount rate" },
+        { "id": "2", "option": "Future value" },
+        { "id": "3", "option": "Number of periods" },
+        { "id": "4", "option": "Growth rate" }
+      ]
+    },
+    {
+      "id": "3",
+      "question": "What is the future value of $1,000 invested at 8% annually for 3 years? (Assume annual compounding)",
+      "options": [
+        { "id": "1", "option": "$1,260" },
+        { "id": "2", "option": "$1,320" },
+        { "id": "3", "option": "$1,250" },
+        { "id": "4", "option": "$1,500" }
+      ]
+    },
+    {
+      "id": "4",
+      "question": "Which statement about annuities is TRUE?",
+      "options": [
+        { "id": "1", "option": "Ordinary annuities are discounted to one period before the first payment" },
+        { "id": "2", "option": "Annuities due are valued using the same method as perpetuities" },
+        { "id": "3", "option": "An annuity due and an ordinary annuity always have the same present value" },
+        { "id": "4", "option": "Annuity formulas only apply to equal cash flows" }
+      ]
+    },
+    {
+      "id": "5",
+      "question": "You need $10,000 in 5 years. If you can earn 6% annually, how much should you invest today?",
+      "options": [
+        { "id": "1", "option": "$7,000" },
+        { "id": "2", "option": "$7,472" },
+        { "id": "3", "option": "$7,737" },
+        { "id": "4", "option": "$8,200" }
+      ]
+    }
+  ]
+}

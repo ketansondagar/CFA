@@ -1,0 +1,41 @@
+{
+  "topics": [
+    {
+      "id": "1",
+      "title": "Quantitative Methods",
+      "description": "",
+      "image": "2.jpg",
+      "enabled": true,
+      "createdAt": "2025-10-15T07:20:30.974Z",
+      "updatedAt": "2025-10-15T07:24:37.088Z"
+    },
+    {
+      "id": "2",
+      "title": "Ethics",
+      "description": "",
+      "image": "1.jpg",
+      "enabled": false,
+      "createdAt": "2025-10-15T07:20:30.974Z",
+      "updatedAt": "2025-10-15T07:24:37.088Z"
+    },
+    {
+      "id": "3",
+      "title": "Economics",
+      "description": "",
+      "image": "3.jpg",
+      "enabled": false,
+      "createdAt": "2025-10-15T07:20:30.974Z",
+      "updatedAt": "2025-10-15T07:24:37.088Z"
+    },
+    {
+      "id": "4",
+      "title": "Financial Statement Analysis (FSA)",
+      "description": "",
+      "image": "4.jpg",
+      "enabled": false,
+      "createdAt": "2025-10-15T07:20:30.974Z",
+      "updatedAt": "2025-10-15T07:24:37.088Z"
+    }
+  ],
+  "lastUpdated": "2025-10-06T07:24:37.088Z"
+}

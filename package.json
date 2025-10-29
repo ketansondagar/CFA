@@ -1,0 +1,39 @@
+{
+  "name": "react-redux-bootstrap-example",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+  "start": "react-scripts start",
+  "start:dev": "env-cmd -f env/.env.development react-scripts start",
+  "start:qa": "env-cmd -f env/.env.qa react-scripts start",
+  "build:dev": "env-cmd -f env/.env.development react-scripts build",
+  "build:qa": "env-cmd -f env/.env.qa react-scripts build"
+},
+  "dependencies": {
+    "@reduxjs/toolkit": "^1.9.5",
+    "bootstrap": "^5.3.2",
+    "lucide-react": "^0.545.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-ga": "^3.3.1",
+    "react-redux": "^8.0.5",
+    "react-router-dom": "^7.9.4",
+    "react-scripts": "5.0.1"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@axe-core/react": "^4.11.0",
+    "env-cmd": "^11.0.0"
+  }
+}

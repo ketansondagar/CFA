@@ -1,0 +1,154 @@
+/* Page container */
+.topic-container {
+  min-height: 100vh;
+  background: rgba(6, 0, 90, 1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Inter', sans-serif;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Fixed heading */
+.topic-heading {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: white;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #2d3748;
+  padding: 20px 16px;
+  height: 60px;
+  z-index: 10;
+}
+
+.topic-heading h2 {
+  font-weight: 600;
+  font-size: 26px;
+  line-height: 20px;
+  text-align: left;
+  vertical-align: middle;
+}
+
+/* Scrollable topic list */
+.topic-list {
+  flex: 1;
+  overflow-y: auto;
+  padding: 80px 16px 80px;
+  /* header + footer spacing */
+  box-sizing: border-box;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Each topic card */
+.topic-card {
+  position: relative;
+  overflow: hidden;
+  background-color: white;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.topic-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Disabled card */
+.topic-card-disabled {
+  opacity: 0.7;
+  filter: grayscale(20%);
+  pointer-events: none;
+}
+
+/* Image in topic card */
+.topic-image {
+  width: 100%;
+  height: 175px;
+  object-fit: cover;
+}
+
+/* Overlay and title styling */
+.topic-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.title-div {
+  padding: 10px;
+  background: white;
+  width: 100%;
+}
+
+.topic-title {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 34px;
+  text-align: left;
+  vertical-align: middle;
+  color: black;
+  margin: 0px;
+}
+
+/* Footer fixed at bottom */
+.topic-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: white;
+  text-align: center;
+  padding: 12px;
+  border-top: 1px solid #ccc;
+  font-size: 0.875rem;
+  color: #a0aec0;
+  z-index: 10;
+}
+
+.topic-footer p {
+color: #000000;
+}
+
+/* Responsive adjustment */
+@media (max-width: 768px) {
+  .topic-heading {
+    font-size: 1.25rem;
+    padding: 16px;
+  }
+
+  .topic-heading h2 {
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 39px;
+    text-align: left;
+    vertical-align: middle;
+  }
+
+  .topic-image {
+    height: 170px;
+  }
+
+  .topic-title {
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 34px;
+    text-align: left;
+    vertical-align: middle;
+    color: black;
+  }
+}
+
+p {
+  margin: 0;
+}

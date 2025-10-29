@@ -1,0 +1,68 @@
+{
+  "modales": [
+    {
+      "id": "1",
+      "title": "Time value of money",
+      "description": "The Time Value of Money is...",
+      "image": "1.png",
+      "enabled": true,
+      "createdAt": "2025-10-15T07:20:30.974Z",
+      "updatedAt": "2025-10-15T07:24:37.088Z"
+    },
+    {
+      "id": "2",
+      "title": "Discounted cash flow ",
+      "description": "The Time Value of Money is...",
+      "image": "2.png",
+      "enabled": false,
+      "createdAt": "2025-10-15T07:20:30.974Z",
+      "updatedAt": "2025-10-15T07:24:37.088Z"
+    },
+    {
+      "id": "3",
+      "title": "Statistical concepts",
+      "description": "The Time Value of Money is...",
+      "image": "3.png",
+      "enabled": false,
+      "createdAt": "2025-10-15T07:20:30.974Z",
+      "updatedAt": "2025-10-15T07:24:37.088Z"
+    },
+    {
+      "id": "4",
+      "title": "Probability analysis",
+      "description": "The Time Value of Money is...",
+      "image": "4.png",
+      "enabled": false,
+      "createdAt": "2025-10-15T07:20:30.974Z",
+      "updatedAt": "2025-10-15T07:24:37.088Z"
+    },
+    {
+      "id": "5",
+      "title": "Common probability ",
+      "description": "The Time Value of Money is...",
+      "image": "5.png",
+      "enabled": false,
+      "createdAt": "2025-10-15T07:20:30.974Z",
+      "updatedAt": "2025-10-15T07:24:37.088Z"
+    },
+    {
+      "id": "6",
+      "title": "Sampling and estimation",
+      "description": "The Time Value of Money is...",
+      "image": "6.png",
+      "enabled": false,
+      "createdAt": "2025-10-15T07:20:30.974Z",
+      "updatedAt": "2025-10-15T07:24:37.088Z"
+    },
+    {
+      "id": "7",
+      "title": "Hypothesis Testing",
+      "description": "The Time Value of Money is...",
+      "image": "7.png",
+      "enabled": false,
+      "createdAt": "2025-10-15T07:20:30.974Z",
+      "updatedAt": "2025-10-15T07:24:37.088Z"
+    }
+  ],
+  "lastUpdated": "2025-10-06T07:24:37.088Z"
+}
