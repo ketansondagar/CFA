@@ -5,7 +5,7 @@
   flex-direction: column;
   overflow: hidden;
   position: relative;
-  background: linear-gradient(179.93deg, #000000 -13.51%, #0E2D80 107.69%);
+  background: #06005A;
   font-family: "Inter", sans-serif;
   color: white;
 }
@@ -34,9 +34,9 @@
   /* limit height for scroll */
   overflow: auto;
   /* enable scrolling if needed */
-  background: rgb(255, 255, 255);
+  background: #fef9f5;
 
-  padding: 16px;
+  padding: 8px 0;
   z-index: 9;
 }
 
@@ -70,7 +70,7 @@
   ;
 }
 
-.overflow {
+.overf {
   overflow: auto;
   /*height: calc(100vh - 192px);*/
   /* Adjust height based on header, description, and footer */
@@ -111,25 +111,9 @@
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
 }
 
-.quant-card-img {
-  width: 76px;
-  height: 79px;
-  object-fit: cover;
-  border-radius: 16px 0 0 16px;
-  padding: 10px;
-}
-
 /* Card text */
 .quant-card-text {
   padding: 12px;
-}
-
-.quant-card-title {
-  font-weight: 800;
-  font-size: 18px;
-  line-height: 22px;
-  vertical-align: middle;
-  margin-bottom: 4px;
 }
 
 .quant-card-subtitle {
@@ -187,13 +171,9 @@
 }
 
 .question-card {
-  border: 1px solid #D9E3E9;
   min-height: 52vh;
   border-radius: 0px;
   margin-top: 60px;
-  background: linear-gradient(rgba(15, 51, 73, 0.85),
-      rgba(15, 51, 73, 0.85)),
-    url("../../asset/images/5.jpg") center/cover no-repeat;
   padding: 20px;
   color: white;
   font-family: "Inter", sans-serif;
@@ -234,8 +214,8 @@
 .option input[type="radio"] {
   accent-color: #336aff;
   cursor: pointer;
-  width: 20px;
-  height: 20px;
+  width: 24px;
+  height: 24px;
   margin-right: 10px;
 }
 
@@ -243,7 +223,7 @@
   align-self: flex-end;
   /* optional, centers horizontally if width < 100% */
   width: 100%;
-  background-color: #D9E3E9;
+  background-color: #4476FF59;
   color: #6C8290;
   font-weight: 600;
   border: none;
@@ -277,16 +257,16 @@ span {
   border: 2px solid #336aff;
   background: #eef3ff;
 }
-
+    .readiness-modules1 {
+        height: auto;
+        margin-top: -220px;
+        margin-bottom: 80px;
+    }
 @media (max-width: 768px) {
   .question-card {
-    border: 1px solid #D9E3E9;
     min-height: 67vh;
     border-radius: 0px;
     margin-top: 60px;
-    background: linear-gradient(rgba(15, 51, 73, 0.85),
-        rgba(15, 51, 73, 0.85)),
-      url("../../asset/images/5.jpg") center/cover no-repeat;
     padding: 20px;
     color: white;
     font-family: "Inter", sans-serif;
@@ -295,15 +275,19 @@ span {
     align-items: stretch;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
   }
+  .readiness-modules1 {
+        height: auto;
+        margin-top: -220px;
+        margin-bottom: 0px;
+    }
 }
 
 .bottom-b {
   padding: 15px;
-  background: white;
 }
 
 .check-btn.active {
-  background-color: black;
+  background-color: #4476FF;
   color: #fff;
   cursor: pointer;
 }
@@ -364,20 +348,116 @@ span {
 
 .btn-color {
   margin-top: 10px;
-  color: #EF4444;
-  background: #FFEFEF;
+  color: #4476FF;
+  background: white;
   text-align: center;
   text-decoration-line: none;
 }
 
 .colorred {
   color: #EF4444;
-  font-weight: 800;
+  font-weight: 500;
 }
 
-.blackc{
+.blackc {
   color: #000000;
 }
-.progress-bar{
-  background-color: #1ab88e;
+
+.progress-bar {
+  background-color: #4476ff;
 }
+
+.padi-b {
+  background: black;
+  color: white;
+  padding: 7px;
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+.readiness-module {
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  flex-direction: column;
+  margin-top: 71px;
+}
+
+.bar-d {
+  border: 3px solid #4476FF80;
+  padding: 10px;
+  border-style: dashed;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.time-readiness-quote1 {
+  font-style: italic;
+  color: #0f3349;
+  margin-bottom: 20px;
+}
+
+.readiness-overflow {
+  overflow: auto;
+  flex: 1 1;
+}
+
+.font-w {
+  font-size: 18px;
+  line-height: 26px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.xp-card {
+  display: inline-block;
+  text-align: center;
+  padding: 15px 25px;
+  border: 1px solid rgba(51, 106, 255, 0.3);
+  border-left: 2px solid #336aff;
+  border-right: 2px solid #336aff;
+  border-radius: 6px;
+  background-color: #fef9f5;
+}
+
+.xp-value {
+  font-size: 26px;
+  color: #336aff;
+  font-weight: 600;
+}
+
+.xp-value .plus {
+  font-weight: 700;
+}
+
+.xp-value .xp-text {
+  font-size: 18px;
+  font-weight: 500;
+  margin-left: 3px;
+}
+
+.xp-label {
+  background-color: #000;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 4px 10px;
+  border-radius: 4px;
+  display: inline-block;
+  margin-top: 6px;
+}
+
+.readiness-text{
+  text-align: center;
+}
+
+.readiness-icon{
+  text-align: center;
+}
+

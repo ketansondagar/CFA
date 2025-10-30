@@ -38,6 +38,7 @@
   margin-top: 0;
   /* Removes extra spacing at the top */
 }
+
 .time-modules1 {
   display: flex;
   justify-content: center;
@@ -45,9 +46,10 @@
   align-items: center;
   /* Centers horizontally */
   flex-direction: column;
-    height: 78vh;
+  height: 78vh;
   /* Takes most of the screen height */
   margin-top: 0;
+   margin-top: -225px;
   /* Removes extra spacing at the top */
 }
 
@@ -55,9 +57,9 @@
 .time-card {
   background-color: #ffffff;
   color: #0f3349;
-  padding: 20px;
+  padding: 30px;
   width: 100%;
-  text-align: center;
+  text-align: left;
 }
 
 .time-readiness-card {
@@ -68,7 +70,6 @@
 .time-readiness-icon-box {
   width: 130px;
   height: 127px;
-  background-color: #a4b9ff;
   margin: 15px;
   object-fit: contain;
   margin-bottom: 35px;
@@ -83,17 +84,20 @@
 
 /* Button */
 .time-readiness-btn {
-  background-color: #1963f0;
+  background-color: #336AFF;
   border: none;
   color: white;
-  padding: 10px 20px;
+  padding: 15px 20px;
   font-weight: 600;
   cursor: pointer;
   font-size: 17px;
+  width: 100%;
+    display: block;
+    text-align: center;
 }
 
 .time-readiness-btn:hover {
-  background-color: #0e4ac2;
+  background-color: #336AFF;
 }
 
 /* Footer */
@@ -104,19 +108,30 @@
   background-color: #ffffff;
   font-size: 14px;
 }
-.time-modules{
-    display: none;
-  }
+
+
 @media (max-width: 768px) {
   .col-lg-10 {
     padding: 65px;
   }
-  .time-modules{
-    display: flex;
-  }
+
   .time-modules1 {
     height: auto;
+    margin-top: -172px;
   }
+  .time-card {
+  background-color: #ffffff;
+  color: #0f3349;
+  padding: 30px;
+  width: 100%;
+  text-align: left;
+}
+.time-readiness-quote {
+    font-style: italic;
+    color: #0f3349;
+    margin-bottom: 100px;
+    margin-top: 50px;
+}
 }
 
 .time-readiness-icon {
@@ -125,4 +140,12 @@
 
 .line {
   text-decoration-line: none;
+}
+
+.w-100{
+  width: 100%;
+}
+
+.text-right{
+  text-align: end;
 }

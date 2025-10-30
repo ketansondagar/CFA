@@ -1,16 +1,20 @@
-window.addEventListener('beforeunload', function () {
-      localStorage.clear();
-    });
+export const initGA = () => {
+  const measurementId = process.env.REACT_APP_GA_MEASUREMENT_ID || 'G-DEFAULT-ID'; // fallback
 
+  if (typeof window.gtag !== 'function') {
     window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
+    function gtag(){window.dataLayer.push(arguments);}
+    window.gtag = gtag;
+
     gtag('js', new Date());
+  }
 
-    // Use sessionStorage instead of localStorage for temporary user ID
-    const userId = sessionStorage.getItem('user_id') || crypto.randomUUID();
-    sessionStorage.setItem('user_id', userId);
+  // Generate or fetch a persistent user ID
+  const userId = localStorage.getItem('user_id') || crypto.randomUUID();
+  localStorage.setItem('user_id', userId);
 
-    // Send it to Google Analytics
-    gtag('config', 'G-8Q7MHWN8VH', {
-      'user_id': userId
-    });
+  // Send config to Google Analytics
+  window.gtag('config', measurementId, {
+    'user_id': userId
+  });
+};
