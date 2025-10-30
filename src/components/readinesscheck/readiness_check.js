@@ -135,7 +135,7 @@ export default function TimeValueQuestion() {
         </div>
 
       </div>
-      <div className={`qua-description ${currentQuestionIndex < questions.length ? "show" : "hide"}`} tabIndex="0">
+      <div className={`qua-description ${currentQuestionIndex < questions.length-1 ? "show" : "hide"}`} tabIndex="0">
         <div className="row align-items-center justify-content-center">
           {/* Close button */}
 
@@ -166,7 +166,7 @@ export default function TimeValueQuestion() {
       </div>
 
       {/* Progress bar */}
-      <div className={`overf ${currentQuestionIndex < questions.length ? "show" : "hide"}`} tabIndex={0}>
+      <div className={`overf ${currentQuestionIndex < questions.length-1 ? "show" : "hide"}`} tabIndex={0}>
 
 
         {/* Question Card */}
