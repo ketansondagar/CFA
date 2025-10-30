@@ -11,15 +11,16 @@ export default function TimeValueQuestion() {
   const currentQuestion = questions[currentQuestionIndex];
 
   if (!currentQuestion) return <div>Loading questions...</div>;
-  const [count, setCount] = useState(5);
+  const [count, setCount] = useState(currentQuestionIndex + 1 / questions.length * 100);
+  const value = ((currentQuestionIndex + 2) / questions.length) * 100;
   const handleContinue = () => {
     if (currentQuestionIndex < questions.length - 1) {
       setCurrentQuestionIndex(currentQuestionIndex + 1);
-      setCount(prev => prev + 5);
+      setCount(value);
       setSelectedOption("");
       setSelectedOptionId("");
     } else {
-
+      console.log('helllo')
     }
   };
 
@@ -134,7 +135,7 @@ export default function TimeValueQuestion() {
         </div>
 
       </div>
-      <div className={`qua-description ${currentQuestionIndex < questions.length - 1 ? "show" : "hide"}`} tabIndex="0">
+      <div className={`qua-description ${currentQuestionIndex < questions.length ? "show" : "hide"}`} tabIndex="0">
         <div className="row align-items-center justify-content-center">
           {/* Close button */}
 
@@ -165,7 +166,7 @@ export default function TimeValueQuestion() {
       </div>
 
       {/* Progress bar */}
-      <div className={`overf ${currentQuestionIndex < questions.length - 1 ? "show" : "hide"}`} tabIndex={0}>
+      <div className={`overf ${currentQuestionIndex < questions.length ? "show" : "hide"}`} tabIndex={0}>
 
 
         {/* Question Card */}
@@ -216,7 +217,7 @@ export default function TimeValueQuestion() {
         </div>
       </div>
 
-      <div className={`readiness-overflow ${currentQuestionIndex < questions.lengt - 1 ? "hide" : "show"}`} tabIndex={0}>
+      <div className={`readiness-overflow ${currentQuestionIndex == questions.length ? "hide" : "show"}`} tabIndex={0}>
         {/* Readiness Check Card */}
 
         <div className="readiness-module">
