@@ -34,7 +34,7 @@ export default function learningmoduleMethods() {
             {modules.map((m) => (
               <div key={m.id} className="col-md-12 col-lg-6">
                 {m.enabled ? (
-                <a href="time" className="line">
+                <a href="timeline" className="line">
                 <div className="quant-card">
                   <img src={require(`../../asset/images/${m.image}`)} alt={m.description} className="quant-card-img" />
                   <div className="quant-card-text">

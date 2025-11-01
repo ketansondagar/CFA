@@ -1,50 +1,226 @@
-import React from "react";
-import "./time.css"; // Import external CSS
+import React, { useState } from "react";
+import "./readiness_check.css";
+import json from "../../asset/json/LM1.json";
 
-export default function TimeValueOfMoney() {
+export default function TimeValueQuestion() {
+  const [selectedOptionId, setSelectedOptionId] = useState("");
+  const [selectedOption, setSelectedOption] = useState("");
+  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+
+  const questions = json.questions || [];
+  const currentQuestion = questions[currentQuestionIndex];
+
+  if (!currentQuestion) return <div>Loading questions...</div>;
+  const [count, setCount] = useState(((currentQuestionIndex + 1) / questions.length) * 20);
+  const value = ((currentQuestionIndex + 2) / questions.length) * 20;
+  const handleContinue = () => {
+    if (currentQuestionIndex < questions.length - 1) {
+      setCurrentQuestionIndex(currentQuestionIndex + 1);
+      setCount(value);
+      setSelectedOption("");
+      setSelectedOptionId("");
+    } else {
+      
+    }
+  };
+
+  const [isDisabled, setIsDisabled] = useState(false); // controls the Check button
+
+  const handlesContinue = () => {
+    // YES, CONTINUE → Check stays enabled
+    setIsDisabled(false);
+  };
+
+  const handleQuit = () => {
+    // NO, QUIT → disable the Check button
+    setIsDisabled(true);
+    setSelectedOption("");
+    setSelectedOptionId("");
+  };
+
   return (
-    <div className="time-page">
+    <div className="quant-pagerc">
+      {/* Header */}
+      <div className="quant-header">
+        <div className="row w-100 align-items-center">
+          <div className="col-8 d-flex align-items-center">
+            <a href="/time" aria-label="Home" style={{ display: "flex", alignItems: "center" }}>
+              <svg
+                width="34"
+                height="34"
+                viewBox="0 0 34 34"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect width="34" height="34" rx="6" fill="#F7F9FB" />
+                <path
+                  d="M21.125 9.125L12.875 17L21.125 24.875"
+                  stroke="#0F3349"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </a>
 
-      {/* Fixed Header */}
-      <div className="time-header">
-        <div className="row w-100">
-        <div className="col-8">
-          <a href="timeline" aria-label="Home">
+            <span style={{ paddingLeft: "10px" }}>Readiness check</span>
+          </div>
+
+          <div className="col-4 text-right d-flex justify-content-end align-items-center">
+            {/* Home Icon */}
             <svg
-              width="34"
-              height="34"
-              viewBox="0 0 34 34"
+              width="19"
+              height="21"
+              viewBox="0 0 19 21"
+              style={{ marginRight: "15px" }}
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >
-              <rect width="34" height="34" rx="6" fill="#F7F9FB" />
               <path
-                d="M21.125 9.125L12.875 17L21.125 24.875"
-                stroke="#0F3349"
-                strokeWidth="2"
+                d="M2.375 18.6667H5.9375V11.6667H13.0625V18.6667H16.625V8.16667L9.5 2.91667L2.375 8.16667V18.6667ZM0 21V7L9.5 0L19 7V21H10.6875V14H8.3125V21H0Z"
+                fill="#336AFF"
+              />
+            </svg>
+
+            {/* Infinity Icon */}
+            <svg
+              width="22"
+              height="20"
+              viewBox="0 0 22 20"
+              style={{ marginRight: "15px" }}
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M18.7 20C17.985 20 17.3433 19.7917 16.775 19.375C16.2067 18.9583 15.8125 18.4259 15.5925 17.7778H9.9C8.69 17.7778 7.65417 17.3426 6.7925 16.4722C5.93083 15.6019 5.5 14.5556 5.5 13.3333C5.5 12.1111 5.93083 11.0648 6.7925 10.1944C7.65417 9.32407 8.69 8.88889 9.9 8.88889H12.1C12.705 8.88889 13.2229 8.6713 13.6537 8.23611C14.0846 7.80093 14.3 7.27778 14.3 6.66667C14.3 6.05556 14.0846 5.53241 13.6537 5.09722C13.2229 4.66204 12.705 4.44444 12.1 4.44444H6.4075C6.16917 5.09259 5.77042 5.625 5.21125 6.04167C4.65208 6.45833 4.015 6.66667 3.3 6.66667C2.38333 6.66667 1.60417 6.34259 0.9625 5.69444C0.320833 5.0463 0 4.25926 0 3.33333C0 2.40741 0.320833 1.62037 0.9625 0.972222C1.60417 0.324074 2.38333 0 3.3 0C4.015 0 4.65208 0.208333 5.21125 0.625C5.77042 1.04167 6.16917 1.57407 6.4075 2.22222H12.1C13.31 2.22222 14.3458 2.65741 15.2075 3.52778C16.0692 4.39815 16.5 5.44444 16.5 6.66667C16.5 7.88889 16.0692 8.93519 15.2075 9.80556C14.3458 10.6759 13.31 11.1111 12.1 11.1111H9.9C9.295 11.1111 8.77708 11.3287 8.34625 11.7639C7.91542 12.1991 7.7 12.7222 7.7 13.3333C7.7 13.9444 7.91542 14.4676 8.34625 14.9028C8.77708 15.338 9.295 15.5556 9.9 15.5556H15.5925C15.8308 14.9074 16.2296 14.375 16.7887 13.9583C17.3479 13.5417 17.985 13.3333 18.7 13.3333C19.6167 13.3333 20.3958 13.6574 21.0375 14.3056C21.6792 14.9537 22 15.7407 22 16.6667C22 17.5926 21.6792 18.3796 21.0375 19.0278C20.3958 19.6759 19.6167 20 18.7 20ZM3.3 4.44444C3.61167 4.44444 3.87292 4.33796 4.08375 4.125C4.29458 3.91204 4.4 3.64815 4.4 3.33333C4.4 3.01852 4.29458 2.75463 4.08375 2.54167C3.87292 2.3287 3.61167 2.22222 3.3 2.22222C2.98833 2.22222 2.72708 2.3287 2.51625 2.54167C2.30542 2.75463 2.2 3.01852 2.2 3.33333C2.2 3.64815 2.30542 3.91204 2.51625 4.125C2.72708 4.33796 2.98833 4.44444 3.3 4.44444Z"
+                fill="#336AFF"
+              />
+            </svg>
+
+            {/* Wi-Fi Icon */}
+            <svg
+              width="30"
+              height="19"
+              viewBox="0 0 30 19"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M14.6883 17.9808L9.09179 16.7371C8.59461 16.6266 8.59461 15.9179 9.09179 15.8074L14.6883 14.5638C15.7813 14.3209 16.8182 15.1526 16.8182 16.2723C16.8182 17.392 15.7813 18.2237 14.6883 17.9808Z"
+                fill="#336AFF"
+              />
+              <path
+                d="M28.0901 14.7267C28.0901 11.6569 27.0859 8.824 25.3911 6.54492"
+                stroke="#336AFF"
+                strokeWidth="2.18182"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+              <path
+                d="M6.49023 3.81709C8.74652 2.10522 11.5511 1.09082 14.5902 1.09082C17.6294 1.09082 20.434 2.10522 22.6902 3.81709"
+                stroke="#336AFF"
+                strokeWidth="2.18182"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+              <path
+                d="M1.09082 14.7267C1.09082 11.6569 2.09507 8.824 3.78983 6.54492"
+                stroke="#336AFF"
+                strokeWidth="2.18182"
                 strokeLinecap="round"
                 strokeLinejoin="round"
               />
             </svg>
-          </a>
-          <span style={{ paddingLeft: "10px" }}>Time Value of Money</span>
+          </div>
         </div>
-          <div className="col-4 text-right">
-            <svg width="19" height="21" viewBox="0 0 19 21" style={{ marginRight: '15px' }} fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M2.375 18.6667H5.9375V11.6667H13.0625V18.6667H16.625V8.16667L9.5 2.91667L2.375 8.16667V18.6667ZM0 21V7L9.5 0L19 7V21H10.6875V14H8.3125V21H0Z" fill="#336AFF" />
-            </svg>
-            <svg width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M18.7 20C17.985 20 17.3433 19.7917 16.775 19.375C16.2067 18.9583 15.8125 18.4259 15.5925 17.7778H9.9C8.69 17.7778 7.65417 17.3426 6.7925 16.4722C5.93083 15.6019 5.5 14.5556 5.5 13.3333C5.5 12.1111 5.93083 11.0648 6.7925 10.1944C7.65417 9.32407 8.69 8.88889 9.9 8.88889H12.1C12.705 8.88889 13.2229 8.6713 13.6537 8.23611C14.0846 7.80093 14.3 7.27778 14.3 6.66667C14.3 6.05556 14.0846 5.53241 13.6537 5.09722C13.2229 4.66204 12.705 4.44444 12.1 4.44444H6.4075C6.16917 5.09259 5.77042 5.625 5.21125 6.04167C4.65208 6.45833 4.015 6.66667 3.3 6.66667C2.38333 6.66667 1.60417 6.34259 0.9625 5.69444C0.320833 5.0463 0 4.25926 0 3.33333C0 2.40741 0.320833 1.62037 0.9625 0.972222C1.60417 0.324074 2.38333 0 3.3 0C4.015 0 4.65208 0.208333 5.21125 0.625C5.77042 1.04167 6.16917 1.57407 6.4075 2.22222H12.1C13.31 2.22222 14.3458 2.65741 15.2075 3.52778C16.0692 4.39815 16.5 5.44444 16.5 6.66667C16.5 7.88889 16.0692 8.93519 15.2075 9.80556C14.3458 10.6759 13.31 11.1111 12.1 11.1111H9.9C9.295 11.1111 8.77708 11.3287 8.34625 11.7639C7.91542 12.1991 7.7 12.7222 7.7 13.3333C7.7 13.9444 7.91542 14.4676 8.34625 14.9028C8.77708 15.338 9.295 15.5556 9.9 15.5556H15.5925C15.8308 14.9074 16.2296 14.375 16.7887 13.9583C17.3479 13.5417 17.985 13.3333 18.7 13.3333C19.6167 13.3333 20.3958 13.6574 21.0375 14.3056C21.6792 14.9537 22 15.7407 22 16.6667C22 17.5926 21.6792 18.3796 21.0375 19.0278C20.3958 19.6759 19.6167 20 18.7 20ZM3.3 4.44444C3.61167 4.44444 3.87292 4.33796 4.08375 4.125C4.29458 3.91204 4.4 3.64815 4.4 3.33333C4.4 3.01852 4.29458 2.75463 4.08375 2.54167C3.87292 2.3287 3.61167 2.22222 3.3 2.22222C2.98833 2.22222 2.72708 2.3287 2.51625 2.54167C2.30542 2.75463 2.2 3.01852 2.2 3.33333C2.2 3.64815 2.30542 3.91204 2.51625 4.125C2.72708 4.33796 2.98833 4.44444 3.3 4.44444Z" fill="#336AFF" />
-            </svg>
+
+      </div>
+      <div className={`qua-description ${currentQuestionIndex < questions.length-1 ? "show" : "hide"}`} tabIndex="0">
+        <div className="row align-items-center justify-content-center">
+          {/* Close button */}
+
+
+          {/* Progress dots */}
+          <div className="col-auto d-flex align-items-center">
+            {[...Array(questions.length)].map((_, i) => (
+              <div
+                key={i}
+                style={{
+                  width: "8px",
+                  height: "8px",
+                  borderRadius: "50%",
+                  backgroundColor: i <= currentQuestionIndex ? "#336AFF" : "#F0E6DA",
+                  margin: "0 4px",
+                }}
+              ></div>
+            ))}
+          </div>
+
+          {/* Counter */}
+          <div className="col-auto">
+            <span style={{ fontWeight: "500", color: "#333" }}>
+              {currentQuestionIndex + 1}/{questions.length}
+            </span>
           </div>
         </div>
       </div>
 
-      {/* Page Content */}
-      <div className="time-overflow" tabIndex={0}>
+      {/* Progress bar */}
+      <div className={`overf ${currentQuestionIndex < questions.length-1 ? "show" : "hide"}`} tabIndex={0}>
+
+
+        {/* Question Card */}
+        <div className="padd-w">
+          <div className="question-card">
+            <div className="question-header">
+              <p>{currentQuestion.question}</p>
+            </div>
+
+            <div className="row">
+              {currentQuestion.options.map((item) => (
+                <div key={item.id} className="col-lg-6 mar-b">
+                  <div
+                    className={`question-options ${selectedOption === item.option ? "active" : ""
+                      }`}
+                  >
+                    <label className="option">
+                      <input
+                        type="radio"
+                        name={`q-${currentQuestion.id}`}
+                        checked={selectedOption === item.option}
+                        onChange={() => {
+                          setSelectedOption(item.option);
+                          setSelectedOptionId(item.id);
+                        }}
+                        data-bs-toggle="modal"
+                        data-bs-target="#Continue"
+                      />
+                      <span>{item.option}</span>
+                    </label>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Check Button */}
+          <div className="bottom-b">
+            <button
+              className={`check-btn ${selectedOption ? "active" : ""}`}
+              disabled={isDisabled}
+              data-bs-toggle="modal"
+              data-bs-target={selectedOptionId === "2" ? "#Confidence" : "#retry"}
+            >
+              Check
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div className={`readiness-overflow ${currentQuestionIndex == questions.length ? "hide" : "show"}`} tabIndex={0}>
         {/* Readiness Check Card */}
 
-        <div className="time-modules">
+        <div className="readiness-module">
           <svg width="182" height="235" viewBox="0 0 182 235" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M60.4859 182.299L43.5946 207.947L48.9174 211.451L65.8088 185.802L60.4859 182.299Z" fill="#4476FF" />
             <path d="M52.4194 174.896L35.2384 200.984L40.5612 204.488L57.7422 178.399L52.4194 174.896Z" fill="#4476FF" />
@@ -81,14 +257,14 @@ export default function TimeValueOfMoney() {
             <path d="M152.108 193.354L149.846 199.311L186.754 213.319L189.016 207.363L152.108 193.354Z" fill="#4476FF" />
           </svg>
         </div>
-        <div className="time-modules1">
+        <div className="readiness-modules1">
           <div className="row">
             <div className="col-md-12 col-lg-1"></div>
             <div className="col-md-12 col-lg-10">
 
               <div className="time-card time-readiness-card">
                 <div className="time-card-content">
-                  <div className="time-readiness-icon">
+                  <div className="readiness-icon">
 
                     <svg width="150" height="150" viewBox="0 0 150 150" className="time-readiness-icon-box" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path opacity="0.6" d="M115.585 26.1367H44.7407V115.733H96.9416L115.585 97.0656V26.1367Z" fill="url(#paint0_linear_529_7554)" />
@@ -144,13 +320,49 @@ export default function TimeValueOfMoney() {
                     </svg>
 
                   </div>
-                  <div className="time-readiness-text">
-                    <p className="time-readiness-quote">
-                      “Let's take a quick 5-question readiness check for this module.”
+                  <div className="time-readiness-text readiness-text">
+                    <p className="time-readiness-quote1">
+                      You’ve completed
                     </p>
-                    <a href="readiness_check" className="time-readiness-btn line">
-                      START
-                    </a>
+                    <div className="xp-card">
+                      <div className="xp-value">
+                        <span className="plus">+25</span> <span className="xp-text">XP</span>
+                      </div>
+                      <div className="xp-label">Added to Streak</div>
+                    </div>
+                    <div className="colorset row bar-d">
+                      <div className="col-3 text-center center-c">
+                        <svg width="57" height="31" viewBox="0 0 57 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M26.8442 29.3022L18.6084 21.0142C17.8783 20.2795 18.652 19.065 19.6265 19.4162L30.6185 23.378C32.7888 24.1602 33.6736 26.7534 32.434 28.699C31.1944 30.6447 28.4703 30.9387 26.8442 29.3022Z" fill="#4476FF" />
+                          <path d="M54.9987 28.3626C54.9987 22.4276 53.0274 16.9506 49.7007 12.5444" stroke="#4476FF" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
+                          <path d="M12.5991 7.2708C17.0281 3.96116 22.5334 2 28.4991 2C34.4648 2 39.9701 3.96116 44.3991 7.2708" stroke="#4476FF" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
+                          <path d="M2 28.3626C2 22.4276 3.97131 16.9506 7.29806 12.5444" stroke="#4476FF" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
+                        </svg>
+
+                      </div>
+                      <div className="col-9 text-left">
+                        Confidence Meter
+                        <div className="progress">
+                          <div
+                            className="progress-bar"
+                            role="progressbar"
+                            aria-valuenow={count}
+                            aria-valuemin="0"
+                            aria-valuemax="100"
+                            style={{ width: `${count}%` }}
+                          ></div>
+                        </div>
+                        <span className="font-s">{count} %: Building Confidence</span>
+                      </div>
+
+                    </div>
+                    <p className="font-w">Concept snapshots for time value of money are now unlocked.</p>
+                    {/* <a href="money" className="time-readiness-btn line" >
+                      Continue
+                    </a> */}
+                    <button className="time-readiness-btn line">
+                      Continue
+                    </button>
                   </div>
                 </div>
               </div>
@@ -160,9 +372,9 @@ export default function TimeValueOfMoney() {
         </div>
       </div>
 
-      {/* Fixed Footer */}
-      <div className="time-footer">
-        <div className="row w-100">
+      {/* Footer */}
+      <div className="topic-footer">
+        <div className="row">
           <div className="col-4" style={{ textAlign: 'left' }}>
             <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M20.2889 22L12.5889 14.3C11.9778 14.7889 11.275 15.1759 10.4806 15.4611C9.68611 15.7463 8.84074 15.8889 7.94444 15.8889C5.72407 15.8889 3.84491 15.1199 2.30694 13.5819C0.768982 12.044 0 10.1648 0 7.94444C0 5.72407 0.768982 3.84491 2.30694 2.30694C3.84491 0.768982 5.72407 0 7.94444 0C10.1648 0 12.044 0.768982 13.5819 2.30694C15.1199 3.84491 15.8889 5.72407 15.8889 7.94444C15.8889 8.84074 15.7463 9.68611 15.4611 10.4806C15.1759 11.275 14.7889 11.9778 14.3 12.5889L22 20.2889L20.2889 22ZM7.94444 13.4444C9.47222 13.4444 10.7708 12.9097 11.8403 11.8403C12.9097 10.7708 13.4444 9.47222 13.4444 7.94444C13.4444 6.41667 12.9097 5.11806 11.8403 4.04861C10.7708 2.97917 9.47222 2.44444 7.94444 2.44444C6.41667 2.44444 5.11806 2.97917 4.04861 4.04861C2.97917 5.11806 2.44444 6.41667 2.44444 7.94444C2.44444 9.47222 2.97917 10.7708 4.04861 11.8403C5.11806 12.9097 6.41667 13.4444 7.94444 13.4444Z" fill="#4476FF" />
@@ -223,6 +435,112 @@ export default function TimeValueOfMoney() {
           </div>
         </div>
       </div>
-    </div >
+
+      {/* Continue Modal */}
+      <div className="modal fade bottom-modal" id="Continue" tabIndex="-1" aria-hidden="true">
+        <div className="modal-dialog modal-dialog-centered modal-dialog-slideup">
+          <div className="modal-content">
+            <div className="modal-body">
+              <h5 className="modal-title blackc">Are you sure?</h5>
+              <p>If you quit now, you will lose your progress. Do you want to continue the module? </p>
+              <div className="colorset row">
+                <div className="col-5">
+                  <button data-bs-dismiss="modal" onClick={handleQuit} className="check-btn btn-color">
+                    No, QUIT
+                  </button>
+                </div>
+                <div className="col-7">
+                  <button
+                    className="check-btn active"
+                    data-bs-dismiss="modal"
+                    //onClick={handleContinue}
+                    onClick={handlesContinue}
+                  >
+                    YES, CONTINUE
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Confidence Modal */}
+      <div className="modal fade bottom-modal" id="Confidence" tabIndex="-1" aria-hidden="true">
+        <div className="modal-dialog modal-dialog-centered modal-dialog-slideup">
+          <div className="modal-content">
+            <div className="modal-body">
+              <h5 className="modal-title">
+                <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M2 24L7.56845 8.29268L17.5916 18.3902L2 24ZM5.67517 20.2976L13.5267 17.4927L8.4594 12.3878L5.67517 20.2976ZM15.9768 13.3976L14.8074 12.2195L21.0441 5.93659C21.6381 5.33821 22.3527 5.03902 23.1879 5.03902C24.0232 5.03902 24.7378 5.33821 25.3318 5.93659L26 6.60976L24.8306 7.7878L24.1624 7.11463C23.9026 6.85285 23.5777 6.72195 23.1879 6.72195C22.7981 6.72195 22.4733 6.85285 22.2135 7.11463L15.9768 13.3976ZM11.522 8.90976L10.3527 7.73171L11.0209 7.05854C11.2807 6.79675 11.4107 6.47886 11.4107 6.10488C11.4107 5.73089 11.2807 5.41301 11.0209 5.15122L10.297 4.42195L11.4664 3.2439L12.1903 3.97317C12.7842 4.57154 13.0812 5.28211 13.0812 6.10488C13.0812 6.92764 12.7842 7.63821 12.1903 8.23659L11.522 8.90976ZM13.7494 11.1537L12.58 9.97561L16.5893 5.93659C16.8492 5.6748 16.9791 5.34756 16.9791 4.95488C16.9791 4.5622 16.8492 4.23496 16.5893 3.97317L14.8074 2.17805L15.9768 1L17.7587 2.79512C18.3527 3.3935 18.6497 4.11341 18.6497 4.95488C18.6497 5.79634 18.3527 6.51626 17.7587 7.11463L13.7494 11.1537ZM18.2042 15.6415L17.0348 14.4634L18.8167 12.6683C19.4107 12.0699 20.1253 11.7707 20.9606 11.7707C21.7958 11.7707 22.5104 12.0699 23.1044 12.6683L24.8863 14.4634L23.7169 15.6415L21.935 13.8463C21.6752 13.5846 21.3503 13.4537 20.9606 13.4537C20.5708 13.4537 20.2459 13.5846 19.9861 13.8463L18.2042 15.6415Z" fill="#4476FF" />
+                </svg>
+                {" "}
+                Exactly. <span className="padi-b">+5 XP</span>
+              </h5>
+              <p>
+                TVM reflects opportunity cost—the earlier you receive funds, the more value they hold.
+              </p>
+              <div className="colorset row">
+                <div className="col-2 text-center">
+                  <svg width="57" height="31" viewBox="0 0 57 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M26.8442 29.3022L18.6084 21.0142C17.8783 20.2795 18.652 19.065 19.6265 19.4162L30.6185 23.378C32.7888 24.1602 33.6736 26.7534 32.434 28.699C31.1944 30.6447 28.4703 30.9387 26.8442 29.3022Z" fill="#4476FF" />
+                    <path d="M54.9987 28.3626C54.9987 22.4276 53.0274 16.9506 49.7007 12.5444" stroke="#4476FF" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
+                    <path d="M12.5991 7.2708C17.0281 3.96116 22.5334 2 28.4991 2C34.4648 2 39.9701 3.96116 44.3991 7.2708" stroke="#4476FF" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
+                    <path d="M2 28.3626C2 22.4276 3.97131 16.9506 7.29806 12.5444" stroke="#4476FF" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+
+                </div>
+                <div className="col-10">
+                  Confidence Meter
+                  <div className="progress">
+                    <div
+                      className="progress-bar"
+                      role="progressbar"
+                      aria-valuenow={count}
+                      aria-valuemin="0"
+                      aria-valuemax="100"
+                      style={{ width: `${count}%` }}
+                    ></div>
+                  </div>
+                  <span className="font-s">{count}%: Building Confidence</span>
+                </div>
+                <button
+                  className="check-btn active"
+                  onClick={handleContinue}
+                  data-bs-dismiss="modal"
+                >
+                  Continue
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Retry Modal */}
+      <div className="modal fade bottom-modal" id="retry" tabIndex="-1" aria-hidden="true">
+        <div className="modal-dialog modal-dialog-centered modal-dialog-slideup">
+          <div className="modal-content">
+            <div className="modal-body">
+              <h5 className="modal-title colorred">
+                <svg width="24" height="24" style={{ marginRight: '10px' }} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M9.4 14L12 11.4L14.6 14L16 12.6L13.4 10L16 7.4L14.6 6L12 8.6L9.4 6L8 7.4L10.6 10L8 12.6L9.4 14ZM2 22V4C2 3.45 2.19583 2.97917 2.5875 2.5875C2.97917 2.19583 3.45 2 4 2H20C20.55 2 21.0208 2.19583 21.4125 2.5875C21.8042 2.97917 22 3.45 22 4V16C22 16.55 21.8042 17.0208 21.4125 17.4125C21.0208 17.8042 20.55 18 20 18H6L2 22ZM5.15 16H20V4H4V17.125L5.15 16Z" fill="#EF4444" />
+                </svg>
+                Not quite.</h5>
+              <p>
+                Inflation affects purchasing power, but time value of money is broader. It’s about earning potential of money over time.
+              </p>
+              <div className="colorset row">
+                <button className="check-btn active" data-bs-dismiss="modal">
+                  Continue
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
   );
 }
