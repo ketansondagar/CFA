@@ -127,6 +127,7 @@
   margin-left: 8px;
 }
 
+
 @media (max-width: 768px) {
   .col-lg-10 {
     padding: 65px;
@@ -176,7 +177,11 @@
     font-size: calc(1.325rem + -1vw);
 }
 }
-
+@media (max-width: 400px) {
+  .col-lg-10 {
+    padding: 20px;
+  }
+}
 .time-readiness-icon {
   text-align: left;
 }

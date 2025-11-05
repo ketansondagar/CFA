@@ -1,7 +1,7 @@
 import React from "react";
 import "./timeline.css"; // Import external CSS
 
-export default function TimeValueOfMoney() {
+export default function Timeline() {
   return (
     <div className="time-page">
 
