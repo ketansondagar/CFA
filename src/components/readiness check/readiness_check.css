@@ -329,6 +329,9 @@ span {
 
 .colorset {
   color: #0F3349;
+    border: 3px solid #4476FF80;
+    border-style: dashed;
+    margin-bottom: 30px;
 }
 
 .font-s {
@@ -337,11 +340,6 @@ span {
 
 .w-5 {
   width: 5%;
-}
-
-.col-10 {
-  font-size: 19px;
-  margin-bottom: 30px;
 }
 
 .modal-content {
@@ -363,6 +361,10 @@ span {
 
 .blackc {
   color: #000000;
+}
+
+.progress{
+  border: 1px solid #4476ff;
 }
 
 .progress-bar {
