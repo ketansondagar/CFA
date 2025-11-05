@@ -3,7 +3,7 @@
     {
       "id": "1",
       "title": "Time value of money",
-      "description": "The Time Value of Money is...",
+      "description": "See how money grows or shrinks over time.",
       "image": "1.png",
       "enabled": true,
       "createdAt": "2025-10-15T07:20:30.974Z",
@@ -12,7 +12,7 @@
     {
       "id": "2",
       "title": "Discounted cash flow ",
-      "description": "The Time Value of Money is...",
+      "description": "Learn to organize data for clear insights.",
       "image": "2.png",
       "enabled": false,
       "createdAt": "2025-10-15T07:20:30.974Z",
@@ -21,7 +21,7 @@
     {
       "id": "3",
       "title": "Statistical concepts",
-      "description": "The Time Value of Money is...",
+      "description": "Explore how averages and variations reveal market behavior.",
       "image": "3.png",
       "enabled": false,
       "createdAt": "2025-10-15T07:20:30.974Z",
@@ -30,7 +30,7 @@
     {
       "id": "4",
       "title": "Probability analysis",
-      "description": "The Time Value of Money is...",
+      "description": "Understand how likelihoods shape financial decisions.",
       "image": "4.png",
       "enabled": false,
       "createdAt": "2025-10-15T07:20:30.974Z",
@@ -39,7 +39,7 @@
     {
       "id": "5",
       "title": "Common probability ",
-      "description": "The Time Value of Money is...",
+      "description": "Discover patterns that describe risks and returns.",
       "image": "5.png",
       "enabled": false,
       "createdAt": "2025-10-15T07:20:30.974Z",
@@ -48,7 +48,7 @@
     {
       "id": "6",
       "title": "Sampling and estimation",
-      "description": "The Time Value of Money is...",
+      "description": "Learn how samples help estimate real-world outcomes.",
       "image": "6.png",
       "enabled": false,
       "createdAt": "2025-10-15T07:20:30.974Z",
@@ -57,7 +57,7 @@
     {
       "id": "7",
       "title": "Hypothesis Testing",
-      "description": "The Time Value of Money is...",
+      "description": "Test financial ideas using data and evidence.",
       "image": "7.png",
       "enabled": false,
       "createdAt": "2025-10-15T07:20:30.974Z",

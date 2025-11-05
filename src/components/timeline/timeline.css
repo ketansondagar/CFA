@@ -9,7 +9,7 @@
 }
 
 /* Header */
-.time-header {
+.timeline-header {
   display: flex;
   align-items: center;
   padding: 15px 20px;
@@ -18,6 +18,7 @@
   font-weight: 600;
   position: sticky;
   top: 0;
+  z-index: 2;
 }
 
 /* Content Container */
@@ -39,16 +40,14 @@
   /* Removes extra spacing at the top */
 }
 
-.time-modules1 {
+.timeline-modules1 {
   display: flex;
   justify-content: center;
-  /* Centers vertically */
   align-items: center;
-  /* Centers horizontally */
   flex-direction: column;
-  /* Takes most of the screen height */
   margin-top: 0;
-  margin-top: -225px;
+  margin-top: -160px;
+  margin-bottom: 30px;
   /* Removes extra spacing at the top */
 }
 
@@ -112,7 +111,6 @@
   margin-left: 87px;
   width: 88%;
   height: 2%;
-  margin-top: -50px;
 }
 
 .center-box-b {
@@ -121,14 +119,22 @@
   height: 2%;
 }
 
+.margin-l {
+  margin-left: -20px;
+}
+
+.margin-l-8 {
+  margin-left: 8px;
+}
+
 @media (max-width: 768px) {
   .col-lg-10 {
     padding: 65px;
   }
 
-  .time-modules1 {
+  .timeline-modules1 {
     height: auto;
-    margin-top: -172px;
+    margin-top: -140px;
   }
 
   .time-card {
@@ -147,17 +153,28 @@
   }
 
   .center-box {
-    margin-left: 87px;
-    width: 67%;
+    margin-left: 52px;
+    width: 76%;
     height: 2%;
-    margin-top: -50px;
+
   }
 
   .center-box-b {
-    margin-left: 87px;
-    width: 67%;
+    margin-left: 52px;
+    width: 76%;
     height: 2%;
   }
+
+  .margin-l {
+    margin-left: 0px;
+  }
+
+  .margin-l-8 {
+    margin-left: 0px;
+  }
+  .h2, h2 {
+    font-size: calc(1.325rem + -1vw);
+}
 }
 
 .time-readiness-icon {
@@ -185,23 +202,20 @@
 }
 
 .font-color {
-  font-size: 25px;
-  color: white;
-  font-weight: 800;
+  font-size: 21px;
+  font-weight: 600;
   line-height: 28px;
   text-align: right;
   margin-right: 20px;
-  margin-left: 20px;
+  color: #4476FF;
+;
 }
 
 .font-color-b {
-  font-size: 25px;
-  color: white;
+  font-size: 21px;
   font-weight: 500;
   line-height: 28px;
   text-align: right;
-  margin-right: 20px;
-  margin-left: 20px;
 }
 
 .p-class {
@@ -213,8 +227,14 @@
 }
 
 .active1 {
-  background: black;
+  background: #4476FF;
   color: white;
   text-align: center;
   text-decoration-line: none;
 }
+
+.color-p {
+  color: white;
+  padding: 10px 50px;
+}
+

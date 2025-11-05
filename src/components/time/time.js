@@ -27,7 +27,7 @@ export default function TimeValueOfMoney() {
               />
             </svg>
           </a>
-          <span style={{ paddingLeft: "10px" }}>Time Value of Money</span>
+          <span style={{ paddingLeft: "10px" }} className="font-wigh">Time Value of Money</span>
         </div>
           <div className="col-4 text-right">
             <svg width="19" height="21" viewBox="0 0 19 21" style={{ marginRight: '15px' }} fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -161,7 +161,7 @@ export default function TimeValueOfMoney() {
       </div>
 
       {/* Fixed Footer */}
-      <div className="time-footer">
+      <div className="time-footer topic-footer">
         <div className="row w-100">
           <div className="col-4" style={{ textAlign: 'left' }}>
             <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">

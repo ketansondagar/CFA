@@ -108,7 +108,9 @@
   background-color: #ffffff;
   font-size: 14px;
 }
-
+.font-wigh{
+  font-size: 15px;
+}
 
 @media (max-width: 768px) {
   .col-lg-10 {
@@ -132,6 +134,9 @@
     margin-bottom: 100px;
     margin-top: 50px;
 }
+.font-wigh{
+  font-size: 11px;
+}
 }
 
 .time-readiness-icon {
@@ -149,3 +154,4 @@
 .text-right{
   text-align: end;
 }
+

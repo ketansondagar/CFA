@@ -20,7 +20,7 @@ export default function TimeValueQuestion() {
       setSelectedOption("");
       setSelectedOptionId("");
     } else {
-      
+
     }
   };
 
@@ -217,7 +217,7 @@ export default function TimeValueQuestion() {
         </div>
       </div>
 
-      <div className={`readiness-overflow ${currentQuestionIndex == questions.length ? "hide" : "show"}`} tabIndex={0}>
+      <div className={`readiness-overflow ${currentQuestionIndex < questions.length - 1 ? "hide" : "show"}`} tabIndex={0}>
         {/* Readiness Check Card */}
 
         <div className="readiness-module">

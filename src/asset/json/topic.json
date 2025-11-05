@@ -4,7 +4,7 @@
       "id": "1",
       "title": "Quantitative Methods",
       "description": "",
-      "image": "2.jpg",
+      "image": "qa1.jpg",
       "enabled": true,
       "createdAt": "2025-10-15T07:20:30.974Z",
       "updatedAt": "2025-10-15T07:24:37.088Z"
@@ -13,7 +13,7 @@
       "id": "2",
       "title": "Ethics",
       "description": "",
-      "image": "1.jpg",
+      "image": "qa2.png",
       "enabled": false,
       "createdAt": "2025-10-15T07:20:30.974Z",
       "updatedAt": "2025-10-15T07:24:37.088Z"
@@ -22,7 +22,7 @@
       "id": "3",
       "title": "Economics",
       "description": "",
-      "image": "3.jpg",
+      "image": "qa3.png",
       "enabled": false,
       "createdAt": "2025-10-15T07:20:30.974Z",
       "updatedAt": "2025-10-15T07:24:37.088Z"
@@ -31,7 +31,7 @@
       "id": "4",
       "title": "Financial Statement Analysis (FSA)",
       "description": "",
-      "image": "4.jpg",
+      "image": "qa4.png",
       "enabled": false,
       "createdAt": "2025-10-15T07:20:30.974Z",
       "updatedAt": "2025-10-15T07:24:37.088Z"

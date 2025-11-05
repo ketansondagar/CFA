@@ -35,7 +35,7 @@ export default function learningmoduleMethods() {
               <div key={m.id} className="col-md-12 col-lg-6">
                 {m.enabled ? (
                 <a href="timeline" className="line">
-                <div className="quant-card">
+                <div className="quant-card-modal">
                   <img src={require(`../../asset/images/${m.image}`)} alt={m.description} className="quant-card-img" />
                   <div className="quant-card-text">
                     <p className="quant-card-title">{m.title}</p>
@@ -44,7 +44,7 @@ export default function learningmoduleMethods() {
                 </div>
                 </a>
                  ) : (
-                  <div className="quant-card">
+                  <div className="quant-card-modal">
                   <img src={require(`../../asset/images/${m.image}`)} alt={m.description} className="quant-card-img" />
                   <div className="quant-card-text">
                     <p className="quant-card-title">{m.title}</p>

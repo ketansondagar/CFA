@@ -89,17 +89,7 @@
   background: rgba(255, 255, 255, 0.3);
   border-radius: 4px;
 }
-
-@media (max-width: 768px) {
-  .quant-modules {
-    padding: 0 8px;
-    margin-top: 80px;
-    margin-bottom: 70px;
-  }
-}
-
-/* Each module card */
-.quant-card {
+.quant-card-modal {
   background-color: white;
   color: #1a202c;
   width: 99%;
@@ -111,6 +101,35 @@
   margin-bottom: 15px;
   padding: 24px;
 }
+@media (max-width: 400px) {
+  .quant-modules {
+    padding: 0 8px;
+    margin-top: 80px;
+    margin-bottom: 70px;
+  }
+  .quant-card-modal {
+  background-color: white;
+  color: #1a202c;
+  width: 99%;
+  overflow: hidden;
+  display: block;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 15px;
+  padding: 24px;
+}
+.overflow {
+    opacity: 1;
+    padding-top: 16px;
+    padding-right: 20px;
+    padding-left: 20px;
+    overflow: auto;
+}
+}
+
+/* Each module card */
+
 
 .quant-card:hover {
   transform: scale(1.02);
